@@ -1,9 +1,12 @@
 class LoginPage:
-    def __int__(self, driver, user, passwd, login_button):
+    def __init__(self, driver, user = 'user-name', passwd = 'password', login_button = 'login-button'):
         self.driver = driver
         self.username_field = user
         self.password_field = passwd
         self.login_button = login_button
+
+    def open(self):
+        self.driver.get('https://www.saucedemo.com/')
 
     def enter_username(self, username_data):
         field = self.driver.find_element('id', self.username_field)
